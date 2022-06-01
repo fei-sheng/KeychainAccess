@@ -106,8 +106,8 @@ public enum Accessibility {
      for anything except system use. Items with this attribute will migrate
      to a new device when using encrypted backups.
      */
-    @available(macCatalyst, unavailable)
-    case always
+//    @available(macCatalyst, unavailable)
+//    case always
 
     /**
      Item data can
@@ -149,8 +149,8 @@ public enum Accessibility {
      attribute will never migrate to a new device, so after a backup is
      restored to a new device, these items will be missing.
      */
-    @available(macCatalyst, unavailable)
-    case alwaysThisDeviceOnly
+//    @available(macCatalyst, unavailable)
+//    case alwaysThisDeviceOnly
 }
 
 /**
@@ -1731,20 +1731,20 @@ extension Accessibility: RawRepresentable, CustomStringConvertible {
                 self = .whenUnlocked
             case String(kSecAttrAccessibleAfterFirstUnlock):
                 self = .afterFirstUnlock
-            #if !targetEnvironment(macCatalyst)
-            case String(kSecAttrAccessibleAlways):
-                self = .always
-            #endif
+//            #if !targetEnvironment(macCatalyst)
+//            case String(kSecAttrAccessibleAlways):
+//                self = .always
+//            #endif
             case String(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly):
                 self = .whenPasscodeSetThisDeviceOnly
             case String(kSecAttrAccessibleWhenUnlockedThisDeviceOnly):
                 self = .whenUnlockedThisDeviceOnly
             case String(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly):
                 self = .afterFirstUnlockThisDeviceOnly
-            #if !targetEnvironment(macCatalyst)
-            case String(kSecAttrAccessibleAlwaysThisDeviceOnly):
-                self = .alwaysThisDeviceOnly
-            #endif
+//            #if !targetEnvironment(macCatalyst)
+//            case String(kSecAttrAccessibleAlwaysThisDeviceOnly):
+//                self = .alwaysThisDeviceOnly
+//            #endif
             default:
                 return nil
             }
@@ -1754,18 +1754,18 @@ extension Accessibility: RawRepresentable, CustomStringConvertible {
                 self = .whenUnlocked
             case String(kSecAttrAccessibleAfterFirstUnlock):
                 self = .afterFirstUnlock
-            #if !targetEnvironment(macCatalyst)
-            case String(kSecAttrAccessibleAlways):
-                self = .always
-            #endif
+//            #if !targetEnvironment(macCatalyst)
+//            case String(kSecAttrAccessibleAlways):
+//                self = .always
+//            #endif
             case String(kSecAttrAccessibleWhenUnlockedThisDeviceOnly):
                 self = .whenUnlockedThisDeviceOnly
             case String(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly):
                 self = .afterFirstUnlockThisDeviceOnly
-            #if !targetEnvironment(macCatalyst)
-            case String(kSecAttrAccessibleAlwaysThisDeviceOnly):
-                self = .alwaysThisDeviceOnly
-            #endif
+//            #if !targetEnvironment(macCatalyst)
+//            case String(kSecAttrAccessibleAlwaysThisDeviceOnly):
+//                self = .alwaysThisDeviceOnly
+//            #endif
             default:
                 return nil
             }
@@ -1778,10 +1778,10 @@ extension Accessibility: RawRepresentable, CustomStringConvertible {
             return String(kSecAttrAccessibleWhenUnlocked)
         case .afterFirstUnlock:
             return String(kSecAttrAccessibleAfterFirstUnlock)
-        #if !targetEnvironment(macCatalyst)
-        case .always:
-            return String(kSecAttrAccessibleAlways)
-        #endif
+//        #if !targetEnvironment(macCatalyst)
+//        case .always:
+//            return String(kSecAttrAccessibleAlways)
+//        #endif
         case .whenPasscodeSetThisDeviceOnly:
             if #available(OSX 10.10, *) {
                 return String(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)
@@ -1792,10 +1792,10 @@ extension Accessibility: RawRepresentable, CustomStringConvertible {
             return String(kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
         case .afterFirstUnlockThisDeviceOnly:
             return String(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
-        #if !targetEnvironment(macCatalyst)
-        case .alwaysThisDeviceOnly:
-            return String(kSecAttrAccessibleAlwaysThisDeviceOnly)
-        #endif
+//        #if !targetEnvironment(macCatalyst)
+//        case .alwaysThisDeviceOnly:
+//            return String(kSecAttrAccessibleAlwaysThisDeviceOnly)
+//        #endif
         }
     }
 
@@ -1805,20 +1805,20 @@ extension Accessibility: RawRepresentable, CustomStringConvertible {
             return "WhenUnlocked"
         case .afterFirstUnlock:
             return "AfterFirstUnlock"
-        #if !targetEnvironment(macCatalyst)
-        case .always:
-            return "Always"
-        #endif
+//        #if !targetEnvironment(macCatalyst)
+//        case .always:
+//            return "Always"
+//        #endif
         case .whenPasscodeSetThisDeviceOnly:
             return "WhenPasscodeSetThisDeviceOnly"
         case .whenUnlockedThisDeviceOnly:
             return "WhenUnlockedThisDeviceOnly"
         case .afterFirstUnlockThisDeviceOnly:
             return "AfterFirstUnlockThisDeviceOnly"
-        #if !targetEnvironment(macCatalyst)
-        case .alwaysThisDeviceOnly:
-            return "AlwaysThisDeviceOnly"
-        #endif
+//        #if !targetEnvironment(macCatalyst)
+//        case .alwaysThisDeviceOnly:
+//            return "AlwaysThisDeviceOnly"
+//        #endif
         }
     }
 }
